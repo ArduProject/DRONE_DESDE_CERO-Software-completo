@@ -6,9 +6,9 @@
 
   Más información en los siguientes enlaces:
   - Lectura de mando radio control: https://arduproject.es/mando-rc-y-receptor-programacion-en-arduino-sketch/
-  - Lectura de sensor MPU6050: https://arduproject.es/mpu6050-y-su-programacion/
-  - Control de establidad: https://arduproject.es/control-de-estabilidad-y-pid/
-  - Motores y ESC: https://arduproject.es/motores-esc-y-su-programacion-en-arduino/
+  - Lectura de sensor MPU6050:      https://arduproject.es/mpu6050-y-su-programacion/
+  - Control de establidad:          https://arduproject.es/control-de-estabilidad-y-pid/
+  - Motores y ESC:                  https://arduproject.es/motores-esc-y-su-programacion-en-arduino/
 */
 
 // --------------------------------------------------------------------------------
@@ -39,16 +39,16 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 // AJUSTE DE PIDs
 // Modificar estos parámetros apara ajustar los PID
-float Roll_ang_Kp  = 2.2, Roll_ang_Ki  = 0.06, Roll_ang_Kd  = 15;
-float Pitch_ang_Kp = 2.2, Pitch_ang_Ki = 0.06, Pitch_ang_Kd = 15 ;
-float Pitch_W_Kp   = 1.9, Pitch_W_Ki   = 0.07, Pitch_W_Kd   = 12;
-float Roll_W_Kp    = 1.9, Roll_W_Ki    = 0.07, Roll_W_Kd    = 12;
-float Yaw_W_Kp     = 1.5, Yaw_W_Ki     = 0.05, Yaw_W_Kd     = 0;
+float Roll_ang_Kp  = 0.5, Roll_ang_Ki  = 0.05, Roll_ang_Kd  = 10;
+float Pitch_ang_Kp = 0.5, Pitch_ang_Ki = 0.05, Pitch_ang_Kd = 10;
+float Pitch_W_Kp   = 2,   Pitch_W_Ki   = 0.02, Pitch_W_Kd   = 0;
+float Roll_W_Kp    = 2,   Roll_W_Ki    = 0.02, Roll_W_Kd    = 0;
+float Yaw_W_Kp     = 1,   Yaw_W_Ki     = 0.05, Yaw_W_Kd     = 0;
 
-int PID_W_sat1   = 380;  // Limitar parte integral
-int PID_W_sat2   = 380;  // Limitar salida del PID
-int PID_ang_sat1 = 130;  // Limitar parte integral
-int PID_ang_sat2 = 130;  // Limitar salida del PID
+int PID_W_sat1   = 380;  // Limitar parte integral PID velocidad
+int PID_W_sat2   = 380;  // Limitar salida del PID velocidad
+int PID_ang_sat1 = 130;  // Limitar parte integral PID ángulo
+int PID_ang_sat2 = 130;  // Limitar salida del PID ángulo
 
 float PID_ang_Pitch_error, PID_ang_Pitch_P, PID_ang_Pitch_I, PID_ang_Pitch_D, PID_ang_Pitch_OUT;
 float PID_ang_Roll_error, PID_ang_Roll_P, PID_ang_Roll_I, PID_ang_Roll_D, PID_ang_Roll_OUT;
